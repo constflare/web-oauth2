@@ -15,17 +15,17 @@ passport.deserializeUser((obj, done) => done(null, obj));
 
 const scopes = ["identify", "guilds"];
 passport.use(new Strategy({
-      clientID: "839909319382138961",
+      clientID: "clientID",
       clientSecret: "secret",
-      callbackURL: "http://localhost:3000/callback",
-      scope: [ "guilds", "identify" ],
+      callbackURL: "callback-url",
+      scope: [ "enter your scopes" ],
     },
     (accessToken, refreshToken, profile, done) => {
       process.nextTick(() => done(null, profile));
     })
 );
 
-app.get("/login", passport.authenticate("discord", { scope: ["identify", "guilds", "guilds.join" ], }));
+app.get("/login", passport.authenticate("discord", { scope: ["enter your scopes" ], }));
 app.get("/callback", passport.authenticate("discord", { failureRedirect: "/error", }), (req, res) => res.redirect("/"));
 app.get("/logout", (req, res) => {
   req.logOut();
