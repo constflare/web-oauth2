@@ -1,6 +1,6 @@
 # web-oauth2
 
-This OAuth2 Discord Login Coded by const#0001
+OAuth2 Discord login / coded by const#0001
 
 With this program, you can add Discord Login Page to your website, you can give a specific role to logged users
 
